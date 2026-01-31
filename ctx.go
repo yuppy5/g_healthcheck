@@ -13,8 +13,9 @@ var onceDo sync.Once
 func AddHealthcheckHandler(r *gin.Engine) {
 	onceDo.Do(func() {
 		// healthcheck handler
-		r.GET("/process_is_running", healthcheck.Process)
-		r.HEAD("/process_is_running", healthcheck.Process)
+		r.GET("/is_running", healthcheck.Process)
+		r.HEAD("/is_running
+		", healthcheck.Process)
 		r.GET("/healthcheck.html", healthcheck.HealthCheck)
 		r.HEAD("/healthcheck.html", healthcheck.HealthCheck)
 	})
